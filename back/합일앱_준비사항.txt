@@ -1,0 +1,31 @@
+
+합일앱
+1. 할일을 추가할 수 있다 C   /tasks post  
+2. 할일 리스트를 볼 수 있다 R   /tasks get  
+3. 할일에 대해서 끝남 안끝남 표시를 할 수 있다 U   /tasks/:id put  
+4. 할일을 삭제할 수 있다 D   /tasks/:id delete
+
+백엔드 준비
+1. 기본세팅 : npm세팅, express, mongoose, app 리스너
+2. 라우터 주소 정의
+3. 데이터베이스 스키마 정의
+4. 기능정의 : CRUD
+5. 테스트 : 포스트맨
+
+프론트엔드 준비
+1. 깃 클론
+2. 기능만들기 : CRUD
+3. 테스트
+
+기본세팅에 필요한 라이브러리들 📜
+npm install express mongoose body-parser
+
+nodemon app.js
+
+npm install cors
+
+>>로그인
+1. 회원가입  
+2. 로그인  
+3. 유저 권한확인 (투두페이지는 로그인한 유저만! 들어갈 수 있다)  
+4. 내가 이미 로그인한 유저라면 추가 로그인 없이 바로 메인페이지로 돌아오기
