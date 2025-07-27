@@ -26,9 +26,9 @@ try{
   const{email,password} =req.body
   const user = await User.findOne({email})
   if(user){
-    const isMath = bcrypt.compareSync(password, user.password )
-    if(isMath){
-      const token = user.generateToken()
+    const isMatch = bcrypt.compareSync(password, user.password )
+    if(isMatch){
+      const token = await user.generateToken()
       return res.status(200).json({status: "success", user, token})
     }
   }
