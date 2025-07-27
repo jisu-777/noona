@@ -4,6 +4,8 @@ const bodyParser = require("body-parser")
 const cors = require('cors')
 const indexRouter = require('./routes/index');
 const app =express()
+require('dotenv').config
+const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -13,7 +15,7 @@ app.use("/api", indexRouter)
 // 슬래시 api는 써도 되고 안써도 되고
 
 
-const mongoURI  = "mongodb://localhost:27017/to-do-app";
+const mongoURI  = MONGODB_URI_PROD
 
 mongoose.connect(mongoURI,{useNewUrlParser:true
 }).then(()=>{console.log("mongoose connected")
@@ -21,8 +23,8 @@ mongoose.connect(mongoURI,{useNewUrlParser:true
   console.log("DB connection fail", err)
 })
 
-app.listen(5000, ()=>{
-  console.log("server on 5000")
+app.listen (process.env.PORT ||5000, () => {
+  console.log("server on 5000");})
 
 
   
